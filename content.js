@@ -2,6 +2,7 @@
 
 // Хранит последние найденные элементы .flag-icons
 let lastFlags = Array.from(document.querySelectorAll('.flag-icons'));
+console.log("🚩 Последние элементы .flag-icons:", lastFlags);
 
 // Функция для отправки уведомления о новом ордере
 function notifyNewOrder(newFlag) {
