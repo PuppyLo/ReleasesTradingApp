@@ -1,40 +1,26 @@
 {
-  "manifest_version": 3,
-  "name": "Order Notifier",
-  "version": "1.0",
-  "description": "Отслеживает новые ордера и отправляет уведомления.",
-  "permissions": [
+    "manifest_version": 3,
+    "name": "HTX Order Tracker",
+    "version": "1.0",
+    "description": "Отслеживает новые ордера на htx.com и отправляет уведомления.",
+    "permissions": [
+      "tabs",
       "notifications",
-      "storage",
       "activeTab"
-  ],
-  "background": {
+    ],
+    "host_permissions": [
+      "https://htx.com/*"
+    ],
+    "background": {
       "service_worker": "background.js"
-  },
-  "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-          "16": "icon.png",
-          "48": "icon.png",
-          "128": "icon.png"
-      }
-  },
-  "icons": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
-  },
-  "content_scripts": [
+    },
+    "content_scripts": [
       {
-          "matches": ["https://www.htx.com/*"],
-          "js": ["content.js"]
+        "matches": ["https://htx.com/*"],
+        "js": ["content.js"]
       }
-  ],
-  "web_accessible_resources": [
-    {
-        "resources": ["notification.mp3"],
-        "matches": ["<all_urls>"]
+    ],
+    "icons": {
+      "48": "icon.png"
     }
-]
-
-}
+  }
